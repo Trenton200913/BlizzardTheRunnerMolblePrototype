@@ -29,4 +29,5 @@ tiles.placeOnRandomTile(mySprite, assets.tile`myTile1`)
 scene.cameraFollowSprite(mySprite)
 forever(function () {
     mySprite.vx = 80
+    info.changeScoreBy(1)
 })
