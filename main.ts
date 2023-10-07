@@ -28,5 +28,5 @@ tiles.setCurrentTilemap(tilemap`level1`)
 tiles.placeOnRandomTile(mySprite, assets.tile`myTile1`)
 scene.cameraFollowSprite(mySprite)
 forever(function () {
-    mySprite.vx = 100
+    mySprite.vx = 80
 })
