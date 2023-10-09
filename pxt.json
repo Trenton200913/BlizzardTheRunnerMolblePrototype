@@ -1,6 +1,6 @@
 {
     "name": "Blizzard The Runner molble #2",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "description": "",
     "dependencies": {
         "device": "*"
