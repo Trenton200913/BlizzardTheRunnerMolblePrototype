@@ -1,3 +1,8 @@
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (mySprite.vy == 0) {
+        mySprite.y = 5
+    }
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite.vy == 0) {
         mySprite.vy = -90
