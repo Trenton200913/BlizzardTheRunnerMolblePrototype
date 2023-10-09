@@ -1,6 +1,6 @@
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite.vy == 0) {
-        mySprite.y = 5
+        mySprite.y = 10
     }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -32,7 +32,7 @@ mySprite = sprites.create(img`
     . . . . . . f . f . . . . . . . 
     . . . . . . f . f . . . . . . . 
     `, SpriteKind.Player)
-mySprite.ay = 100
+mySprite.ay = 160
 tiles.setCurrentTilemap(tilemap`level1`)
 tiles.placeOnRandomTile(mySprite, assets.tile`myTile1`)
 scene.cameraFollowSprite(mySprite)
