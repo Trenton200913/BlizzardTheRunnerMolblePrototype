@@ -1,14 +1,20 @@
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    WhenGrappleIsActivated()
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    WhenJumpIsActivated()
+})
+function WhenGrappleIsActivated () {
     if (mySprite.vy == 0) {
         mySprite.y = 10
     }
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+}
+function WhenJumpIsActivated () {
     if (mySprite.vy == 0) {
         mySprite.vy = -90
     }
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
+}
+scene.onOverlapTile(SpriteKind.Player, assets.tile`Fire`, function (sprite, location) {
     game.setGameOverMessage(false, "falled")
     game.gameOver(false)
 })
@@ -16,24 +22,7 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
     game.splash("(C)2023 TMB LTD and yoshi")
 })
 let mySprite: Sprite = null
-mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . f f f f f . . . . . . 
-    . . . . . f d d d f . . . . . . 
-    . . . . . f d d f f . . . . . . 
-    . . . . . f d d d f . . . . . . 
-    . . . . . f f f f f . . . . . . 
-    . . . . . . f 9 f . . . . . . . 
-    . . . . . f f 9 f f . . . . . . 
-    . . . . f . f 9 f . f . . . . . 
-    . . . f . . f f f . . f . . . . 
-    . . . . . . f . f . . . . . . . 
-    . . . . . . f . f . . . . . . . 
-    . . . . . . f . f . . . . . . . 
-    `, SpriteKind.Player)
+mySprite = sprites.create(assets.image`myImage0`, SpriteKind.Player)
 mySprite.ay = 160
 scene.setBackgroundColor(6)
 scene.setBackgroundImage(img`
@@ -158,10 +147,16 @@ scene.setBackgroundImage(img`
     5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
     5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
     `)
-tiles.setCurrentTilemap(tilemap`level1`)
+tiles.setCurrentTilemap(tilemap`level`)
 tiles.placeOnRandomTile(mySprite, assets.tile`myTile1`)
 scene.cameraFollowSprite(mySprite)
 forever(function () {
-    mySprite.vx = 80
+    mySprite.vx = 90
     info.changeScoreBy(1)
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`myAnim`,
+    100,
+    true
+    )
 })
