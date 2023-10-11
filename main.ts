@@ -15,11 +15,8 @@ function WhenJumpIsActivated () {
     }
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`Fire`, function (sprite, location) {
-    game.setGameOverMessage(false, "falled")
+    game.setGameOverMessage(false, "Falled Becuase of Fire")
     game.gameOver(false)
-})
-controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.splash("(C)2023 TMB LTD and yoshi")
 })
 let mySprite: Sprite = null
 mySprite = sprites.create(assets.image`myImage0`, SpriteKind.Player)
