@@ -3,7 +3,8 @@
     "version": "1.1.0",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "Makey Makey Keymappings": "github:joylabz/makeymakey-makecode-arcade-extension#1.0.3"
     },
     "files": [
         "main.blocks",
