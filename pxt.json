@@ -4,7 +4,8 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "Makey Makey Keymappings": "github:joylabz/makeymakey-makecode-arcade-extension#1.0.3"
+        "Makey Makey Keymappings": "github:joylabz/makeymakey-makecode-arcade-extension#1.0.3",
+        "Austin land": "github:trenton200913/project666#master"
     },
     "files": [
         "main.blocks",
